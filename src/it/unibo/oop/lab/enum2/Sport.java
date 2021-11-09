@@ -110,10 +110,6 @@ public enum Sport {
 		return this.inOrOut;
 	}
 
-	public void setInOrOut(Place inOrOut) {
-		this.inOrOut = inOrOut;
-	}
-
 	public String toString() {
 		return this.name + " " + this.members + " " + this.inOrOut;
 	}

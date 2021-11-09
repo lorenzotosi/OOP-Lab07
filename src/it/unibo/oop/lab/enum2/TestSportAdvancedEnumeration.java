@@ -26,10 +26,14 @@ public final class TestSportAdvancedEnumeration {
      *            ignored
      */
     public static void main(final String... args) {
+    	
+    	
         /*
          * create 2 social network users (Sport2SocialNetworkUser): - Davide
          * Cassani , dcassani, 53 - Fernando Alonso, falonso, 34
          */
+    	
+    	
         final Sport2SocialNetworkUserImpl<User> dcassani =
                 new Sport2SocialNetworkUserImpl<>("Davide", "Cassani", "dcassani", 53);
         final Sport2SocialNetworkUserImpl<User> falonso =
@@ -63,6 +67,5 @@ public final class TestSportAdvancedEnumeration {
          Set<Sport> sportsInPlace = dcassani.getSportPracticedInPlace(Place.OUTDOOR);
          System.out.println("[Cassani] [Outdoor] [no. sports==3]: " +
          (sportsInPlace.size()==3));
-         
     }
 }
