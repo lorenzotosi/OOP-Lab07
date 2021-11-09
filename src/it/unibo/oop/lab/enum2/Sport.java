@@ -37,7 +37,9 @@ public enum Sport {
      * - soccer
      * 
      */
-
+	BASKET(4,Place.INDOOR, "Basket"), VOLLEY(5, Place.INDOOR, "Volley"), TENNIS(1, Place.OUTDOOR, "Tennis"),
+	BIKE(1, Place.OUTDOOR, "Ciclismo"), F1(1, Place.OUTDOOR, "Formula 1"), MOTOGP(1, Place.OUTDOOR, "Moto GP"), 
+	SOCCER(11, Place.OUTDOOR, "Calcio");
     /*
      * TODO
      * 
@@ -45,7 +47,9 @@ public enum Sport {
      * 
      * Declare required fields
      */
-
+	private int members;
+	private Place inOrOut;
+	private String name;
     /*
      * TODO
      * 
@@ -55,6 +59,11 @@ public enum Sport {
      * 
      * - Sport(final Place place, final int noTeamMembers, final String actualName)
      */
+	private Sport(int members, Place inOrOut, String name) {
+		this.members = members;
+		this.inOrOut = inOrOut;
+		this.name = name;
+	}
 
     /*
      * TODO
