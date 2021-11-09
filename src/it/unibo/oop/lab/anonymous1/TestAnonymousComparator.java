@@ -24,6 +24,7 @@ public final class TestAnonymousComparator {
 
     private TestAnonymousComparator() { }
     
+    
 
 	public static class MyComparatorI implements Comparator<User> {
 
