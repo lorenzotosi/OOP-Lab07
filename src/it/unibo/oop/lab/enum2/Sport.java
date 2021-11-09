@@ -90,4 +90,32 @@ public enum Sport {
      * 
      * Returns the string representation of a sport
      */
+	public boolean isIndividualSport() {
+		if(this.members==1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public boolean isIndoorSport() {
+		if(this.inOrOut==Place.INDOOR) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public Place getPlace() {
+		return this.inOrOut;
+	}
+
+	public void setInOrOut(Place inOrOut) {
+		this.inOrOut = inOrOut;
+	}
+
+	public String toString() {
+		return this.name + " " + this.members + " " + this.inOrOut;
+	}
+	
 }
