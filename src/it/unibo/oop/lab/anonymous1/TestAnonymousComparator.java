@@ -1,6 +1,7 @@
 package it.unibo.oop.lab.anonymous1;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import it.unibo.oop.lab.socialnetwork.SocialNetworkUser;
@@ -22,7 +23,22 @@ import it.unibo.oop.lab.socialnetwork.User;
 public final class TestAnonymousComparator {
 
     private TestAnonymousComparator() { }
+    
 
+	public static class MyComparatorI implements Comparator<User> {
+
+		public int compare(User o1, User o2) {
+			if (o1.getAge() > o2.getAge()) {
+				return 1;
+			} else if (o1.getAge() < o2.getAge()) {
+				return -1;
+			} else {
+				return 0;
+			}
+		}
+
+	}
+    
     /**
      * Check whether the users in result list are in the same order as those in
      * expected.
@@ -75,6 +91,9 @@ public final class TestAnonymousComparator {
          * REFER TO LESSON 13-Advanced-Mechanisms.pdf, slide 41
          */
         // TODO
+        
+        denzelUsers.sort(new MyComparatorI());
+        
         /*
          * expected Result
          */
@@ -106,6 +125,9 @@ public final class TestAnonymousComparator {
          * class Collections
          */
         // TODO
+        
+        rossiUsers.sort(new MyComparatorI().reversed());
+        
         /*
          * expected Result
          */
