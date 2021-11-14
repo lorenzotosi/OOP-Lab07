@@ -1,5 +1,6 @@
 package it.unibo.oop.lab.nesting2;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class OneListAcceptable <T> implements Acceptable<T>{
@@ -11,22 +12,20 @@ public class OneListAcceptable <T> implements Acceptable<T>{
 	}
 
 	public Acceptor<T> acceptor() {
+		Iterator<T> it = l1.iterator();
 		
-
 		
 		return new Acceptor<T>() {
-			
-			private int i=0;
-			
 			public void accept(T newElement) throws ElementNotAcceptedException {
-				i++;
-				if(!l1.contains(newElement)) {
+				try {
+					if(!newElement.equals(it.next())) {}
+				} catch (Exception e) {
 					throw new ElementNotAcceptedException(newElement);
 				}
 			}
 			
 			public void end() throws EndNotAcceptedException {
-				if(l1.size()!=i) {
+				if(it.hasNext()) {
 					throw new EndNotAcceptedException();
 				}
 			}
